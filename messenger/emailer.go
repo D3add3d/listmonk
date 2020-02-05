@@ -51,7 +51,7 @@ func NewEmailer(srv ...Server) (Messenger, error) {
 			case "cram", "plain":
 				pool, err := email.NewPool(fmt.Sprintf("%s:%d", s.Host, s.Port), s.MaxConns, auth)
 			default:
-				pool, err := email.NewPool(fmt.Sprintf("%s:%d", s.Host, s.Port), s.MaxConns)
+				pool, err := email.NewPool(fmt.Sprintf("%s:%d", s.Host, s.Port), s.MaxConns, "")
 		}
 		
 		if err != nil {
